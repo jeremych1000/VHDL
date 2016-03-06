@@ -1,0 +1,169 @@
+m255
+K3
+13
+cModel Technology
+dD:\Program Files\altera\13.1\VHDL\cordic
+Pex4_data_pak
+Z0 DPx4 work 10 pix_tb_pak 0 22 VEDdFi>k?89]`m:a91?Bo3
+Z1 DPx4 work 13 pix_cache_pak 0 22 EgaWdo<8KS>J8ei1e@<Ka1
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+w1360870051
+Z4 dD:\Program Files\altera\13.1\VHDL\exer4
+8D:/Program Files/altera/13.1/VHDL/exer4/ex4_data_pak_rand1000.vhd
+FD:/Program Files/altera/13.1/VHDL/exer4/ex4_data_pak_rand1000.vhd
+l0
+L7
+VgO6m^mIclN826H18l4SE;0
+Z5 OV;C;10.1d;51
+31
+Z6 o-work work -93 -explicit -check_synthesis -O0
+Z7 tExplicit 1
+!s100 Xn9zG@NcV0VK2=MS?kafg3
+!i10b 1
+!s108 1457023861.707000
+!s90 -reportprogress|300|-work|work|-93|-explicit|-check_synthesis|D:/Program Files/altera/13.1/VHDL/exer4/ex4_data_pak_rand1000.vhd|
+!s107 D:/Program Files/altera/13.1/VHDL/exer4/ex4_data_pak_rand1000.vhd|
+Ppix_cache_pak
+R2
+R3
+w1423954206
+R4
+8D:/Program Files/altera/13.1/VHDL/exer4/pix_cache_pak.vhd
+FD:/Program Files/altera/13.1/VHDL/exer4/pix_cache_pak.vhd
+l0
+L17
+VEgaWdo<8KS>J8ei1e@<Ka1
+R5
+31
+R6
+R7
+!s100 Vh<EElolmIPoZm>PSzE3b0
+!i10b 1
+!s108 1457023861.957000
+!s90 -reportprogress|300|-work|work|-93|-explicit|-check_synthesis|D:/Program Files/altera/13.1/VHDL/exer4/pix_cache_pak.vhd|
+!s107 D:/Program Files/altera/13.1/VHDL/exer4/pix_cache_pak.vhd|
+Ppix_tb_pak
+R1
+R2
+R3
+Z8 w1423954456
+R4
+Z9 8D:/Program Files/altera/13.1/VHDL/exer4/pix_tb_pak.vhd
+Z10 FD:/Program Files/altera/13.1/VHDL/exer4/pix_tb_pak.vhd
+l0
+L5
+VVEDdFi>k?89]`m:a91?Bo3
+R5
+31
+b1
+Z11 !s108 1457023862.128000
+Z12 !s90 -reportprogress|300|-work|work|-93|-explicit|-check_synthesis|D:/Program Files/altera/13.1/VHDL/exer4/pix_tb_pak.vhd|
+Z13 !s107 D:/Program Files/altera/13.1/VHDL/exer4/pix_tb_pak.vhd|
+R6
+R7
+!s100 WZ2F[QJa=k?=LGDY[?T0U0
+!i10b 1
+Bbody
+Z14 DPx4 work 10 pix_tb_pak 0 22 VEDdFi>k?89]`m:a91?Bo3
+R1
+R2
+R3
+l0
+L20
+VGeCC?Bdee[B1Zzn8n1THM1
+R5
+31
+R11
+R12
+R13
+R6
+R7
+nbody
+!s100 8@TK^@KBa70nDBS5;<YM@2
+!i10b 1
+Epix_word_cache
+Z15 w1456930074
+R1
+Z16 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+R2
+R3
+R4
+Z17 8D:\Program Files\altera\13.1\VHDL\exer4\pix_word_cache.vhd
+Z18 FD:\Program Files\altera\13.1\VHDL\exer4\pix_word_cache.vhd
+l0
+L6
+Vz@<geDD7d_ieMQ95JW95_3
+R5
+31
+Z19 !s108 1457023862.347000
+Z20 !s90 -reportprogress|300|-work|work|-93|-explicit|-check_synthesis|-cover|t3|D:\Program Files\altera\13.1\VHDL\exer4\pix_word_cache.vhd|
+Z21 !s107 D:\Program Files\altera\13.1\VHDL\exer4\pix_word_cache.vhd|
+Z22 !s102 -cover t3
+Z23 o-work work -93 -explicit -check_synthesis -cover t3 -O0
+R7
+!s100 oMVTYn`KdhQ^Fca7H:4UX3
+!i10b 1
+Afunc
+R1
+R16
+R2
+R3
+Z24 DEx4 work 14 pix_word_cache 0 22 z@<geDD7d_ieMQ95JW95_3
+l53
+L17
+VAmSZf0?>QKBj1e@TEZU_c0
+!s100 eH]HSN57el8UZW_eo^W?P1
+R5
+31
+R19
+R20
+R21
+R22
+R23
+R7
+!i10b 1
+Epix_word_cache_tb
+Z25 w1422811414
+Z26 DPx4 work 12 ex4_data_pak 0 22 gO6m^mIclN826H18l4SE;0
+R14
+R1
+R16
+R2
+R3
+R4
+Z27 8D:/Program Files/altera/13.1/VHDL/exer4/pix_word_cache_tb.vhd
+Z28 FD:/Program Files/altera/13.1/VHDL/exer4/pix_word_cache_tb.vhd
+l0
+L30
+VnC9fONS3FWH1<C^9m1Mk02
+!s100 IAm8`D6@@]MX@O74Q_7:O2
+R5
+31
+!i10b 1
+Z29 !s108 1457023862.545000
+Z30 !s90 -reportprogress|300|-work|work|-93|-explicit|-check_synthesis|D:/Program Files/altera/13.1/VHDL/exer4/pix_word_cache_tb.vhd|
+Z31 !s107 D:/Program Files/altera/13.1/VHDL/exer4/pix_word_cache_tb.vhd|
+R6
+R7
+Abehav
+R24
+R26
+R14
+R1
+R16
+R2
+R3
+Z32 DEx4 work 17 pix_word_cache_tb 0 22 nC9fONS3FWH1<C^9m1Mk02
+l92
+L36
+Z33 VMeF`N]>L7LHE@AFeTWG@B2
+Z34 !s100 kmH3R<VG[NLnbjOg5bhOc2
+R5
+31
+!i10b 1
+R29
+R30
+R31
+R6
+R7

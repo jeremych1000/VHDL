@@ -1,0 +1,321 @@
+m255
+K3
+13
+cModel Technology
+dD:\Program Files\altera\13.1
+Edraw_any_octant
+Z0 w1454932399
+Z1 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 dD:\Program Files\altera\13.1\VHDL\ex2z
+Z5 8D:/Program Files/altera/13.1/VHDL/ex2z/draw_any_octant.vhd
+Z6 FD:/Program Files/altera/13.1/VHDL/ex2z/draw_any_octant.vhd
+l0
+L110
+VzSG3V[mo@klckmc9c5dN=0
+Z7 OV;C;10.1d;51
+32
+Z8 !s108 1454932407.272000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Program Files/altera/13.1/VHDL/ex2z/draw_any_octant.vhd|
+Z10 !s107 D:/Program Files/altera/13.1/VHDL/ex2z/draw_any_octant.vhd|
+Z11 o-work work -2002 -explicit -O0
+Z12 tExplicit 1
+!s100 [8[KA_Z9RhbQ:7C05=;6g2
+!i10b 1
+Acomb
+R1
+R2
+R3
+Z13 DEx4 work 15 draw_any_octant 0 22 zSG3V[mo@klckmc9c5dN=0
+l185
+L140
+VI>fh651V]3L0LBEn5F;ol3
+R7
+32
+R8
+R9
+R10
+R11
+R12
+!s100 IDC75BY3WMS^7XQ>O`F`72
+!i10b 1
+Edraw_any_octant_tb
+Z14 w1454158698
+Z15 DPx4 work 12 ex4_data_pak 0 22 2;LMKD]V[OWajaU0I@FUE0
+R1
+R2
+R3
+R4
+Z16 8D:/Program Files/altera/13.1/VHDL/ex2z/draw_any_octant_tb_generic.vhd
+Z17 FD:/Program Files/altera/13.1/VHDL/ex2z/draw_any_octant_tb_generic.vhd
+l0
+L11
+Vc_]S3ITMAHC0he=Dnzb0a2
+R7
+32
+Z18 !s108 1454932408.128000
+Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Program Files/altera/13.1/VHDL/ex2z/draw_any_octant_tb_generic.vhd|
+Z20 !s107 D:/Program Files/altera/13.1/VHDL/ex2z/draw_any_octant_tb_generic.vhd|
+R11
+R12
+!s100 X1AC_alo>EXlNYkPX]k6h0
+!i10b 1
+Abehav
+R13
+R15
+R1
+R2
+R3
+DEx4 work 18 draw_any_octant_tb 0 22 c_]S3ITMAHC0he=Dnzb0a2
+l39
+L14
+VlJW]G4o^DTcK?O<VjkCAJ2
+R7
+32
+R18
+R19
+R20
+R11
+R12
+!s100 ;g=PJXgZnfi[?S5_A^h6D0
+!i10b 1
+Edraw_octant
+Z21 w1454891728
+R1
+R2
+R3
+R4
+Z22 8D:/Program Files/altera/13.1/VHDL/ex2z/draw_octant.vhd
+Z23 FD:/Program Files/altera/13.1/VHDL/ex2z/draw_octant.vhd
+l0
+L7
+V9ZcG6Ff7[N:C8<Vbo6FB;1
+!s100 GF?jY^DlFReicZTAPBbBd2
+R7
+32
+!i10b 1
+Z24 !s108 1454932408.617000
+Z25 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Program Files/altera/13.1/VHDL/ex2z/draw_octant.vhd|
+Z26 !s107 D:/Program Files/altera/13.1/VHDL/ex2z/draw_octant.vhd|
+R11
+R12
+Acomb
+R1
+R2
+R3
+Z27 DEx4 work 11 draw_octant 0 22 9ZcG6Ff7[N:C8<Vbo6FB;1
+l29
+L19
+Z28 V;T1Z;5^@dRd:KaohFe;BW0
+Z29 !s100 cL>LBY@l8P@>SWL4i2W1:1
+R7
+32
+!i10b 1
+R24
+R25
+R26
+R11
+R12
+Pex4_data_pak
+w1315238544
+R4
+8D:/Program Files/altera/13.1/VHDL/ex2z/ex4_data_pak.vhd
+FD:/Program Files/altera/13.1/VHDL/ex2z/ex4_data_pak.vhd
+l0
+L2
+V2;LMKD]V[OWajaU0I@FUE0
+R7
+32
+R11
+R12
+!s100 LW:J<FG`^J6F;_TI:S[183
+!i10b 1
+!s108 1454932408.439000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Program Files/altera/13.1/VHDL/ex2z/ex4_data_pak.vhd|
+!s107 D:/Program Files/altera/13.1/VHDL/ex2z/ex4_data_pak.vhd|
+Einv
+Z30 w1454892046
+R1
+R2
+R3
+R4
+R5
+R6
+l0
+L43
+VJ7B604K__oRgIK7=8^=J@3
+R7
+32
+Z31 !s108 1454892051.891000
+R9
+R10
+R11
+R12
+!s100 XMWR54[]gQLP<`LZk8z9H1
+!i10b 1
+Acomb
+R1
+R2
+R3
+DEx4 work 3 inv 0 22 J7B604K__oRgIK7=8^=J@3
+l57
+L55
+V0c<>=<n`4FbLJ6?hG58B]3
+R7
+32
+R31
+R9
+R10
+R11
+R12
+!s100 ?X3fCWboaCoRFi:P;_mzF3
+!i10b 1
+Emy_inv
+Z32 w1454932399
+R1
+R2
+R3
+R4
+R5
+R6
+l0
+L40
+VPMhnkoM6[AFJ9o<YLdMWU1
+R7
+32
+R8
+R9
+R10
+R11
+R12
+!s100 kG]<XSfM9m<hhE^dPSK@B0
+!i10b 1
+Abehav
+R1
+R2
+R3
+DEx4 work 6 my_inv 0 22 PMhnkoM6[AFJ9o<YLdMWU1
+l53
+L51
+VO_VJBJ2Z@:BLKhJVAWa1=0
+R7
+32
+R8
+R9
+R10
+R11
+R12
+!s100 >AZHE^aoPC:2idh5kOIQF2
+!i10b 1
+Emy_rd
+R32
+R1
+R2
+R3
+R4
+R5
+R6
+l0
+L71
+V9jMOSZgbXU6>JB=P4cZ812
+R7
+32
+R8
+R9
+R10
+R11
+R12
+!s100 aPdIbHW1HOcFk0zY88::43
+!i10b 1
+Afunc
+R1
+R2
+R3
+DEx4 work 5 my_rd 0 22 9jMOSZgbXU6>JB=P4cZ812
+l80
+L78
+VAmmz79oai5Z2FY8=UEH;S2
+R7
+32
+R8
+R9
+R10
+R11
+R12
+!s100 ]j3;Ikk>a6cH_mhQg;A7;3
+!i10b 1
+Emy_swap
+R32
+R1
+R2
+R3
+R4
+R5
+R6
+l0
+L6
+V>;kb866T[@S;Wb6E:Y;TA3
+R7
+32
+R8
+R9
+R10
+R11
+R12
+!s100 96W;JOL3]Ol]99`4VmYZ81
+!i10b 1
+Abehav
+R1
+R2
+R3
+DEx4 work 7 my_swap 0 22 >;kb866T[@S;Wb6E:Y;TA3
+l19
+L17
+V^XhlYFD?R6b;ZCV_n_>Q43
+R7
+32
+R8
+R9
+R10
+R11
+R12
+!s100 b:=]4eVN^3_a11AD4T1W_3
+!i10b 1
+Eswap
+R30
+R1
+R2
+R3
+R4
+R5
+R6
+l0
+L6
+V3DWo_ZNb4iZ4D<;kol`4N1
+R7
+32
+R31
+R9
+R10
+R11
+R12
+!s100 RDWP3<Cl5728RiiQKe?g@1
+!i10b 1
+Acomb
+R1
+R2
+R3
+DEx4 work 4 swap 0 22 3DWo_ZNb4iZ4D<;kol`4N1
+l20
+L18
+VNL4zBi>M0kdVUdU<gzbJo0
+R7
+32
+R31
+R9
+R10
+R11
+R12
+!s100 A5?SnmZ2SkPzddY?PIMhc1
+!i10b 1
