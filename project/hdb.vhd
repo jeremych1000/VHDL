@@ -175,7 +175,7 @@ end case;
 end process OutMux;
 
 --FSM combinational
-FSMcomb:process(state,regEn,dav,delaycmd,draw_done)begin
+FSMcomb:process(state,regEn,dav,delaycmd,draw_done,diff_x,diff_y)begin
 --default FSM output
 draw_en<='0';
 draw<='0';
@@ -262,7 +262,14 @@ when DRAWLINE_wait =>
 		n_state<= DRAWLINE_wait;
 	end if;
 
-when CLEAR=> NULL;
+when CLEAR=> 
+startcmd<='1';
+SelOutMux<="00";
+if delaycmd='0' then
+
+else
+n_state<=CLEAR;
+end if;
 
 end case; 
 end process FSMcomb;
