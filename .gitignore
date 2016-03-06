@@ -85,4 +85,12 @@ Temporary Items
 *.vrb
 *.ser
 *.index
-Thumbs.db
+*.mit
+*.wlf
+*.qpf
+*.sft
+*.vho
+*.sdo
+*.xrf
+*.hsd
+
