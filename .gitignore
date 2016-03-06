@@ -56,7 +56,6 @@ Temporary Items
 *.blg
 *.brf
 *.dvi
-*.fdb_latexmk
 *.fls
 *.glg
 *.glo
@@ -79,10 +78,11 @@ Temporary Items
 *.nls
 *.out
 *.pdf
-*.pdfsync
 *.ps
 *.snm
 *.synctex.gz
 *.toc
 *.vrb
+*.ser
+*.index
 Thumbs.db
