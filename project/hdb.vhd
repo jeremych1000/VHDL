@@ -14,6 +14,7 @@ clk: in std_logic;
 instruction: in std_logic_vector(15 downto 0);
 dav: in std_logic;
 delaycmd:in std_logic;
+reset:in std_logic;
 x_out: out std_logic_vector(5 downto 0);
 y_out: out std_logic_vector(5 downto 0);
 rcbcmd: out std_logic_vector(2 downto 0);
@@ -31,6 +32,13 @@ signal y_new: lv(5 downto 0);
 signal x_old: lv(5 downto 0);
 signal y_old: lv(5 downto 0);
 signal FSM_en:std_logic;
+
+--draw_rect signal
+signal x_in_rect:lv(5 downto 0);
+signal y_in_rect:lv(5 downto 0);
+signal x_out_rect:lv(5 downto 0);
+signal y_out_rect:lv(5 downto 0);
+signal rect_disable:std_logic;
 
 --draw_any_octant signal
 signal swap:std_logic;
@@ -58,12 +66,16 @@ signal draw_done: std_logic;
 signal resetx: std_logic;
 signal draw:std_logic;
 signal SelDrawMux:std_logic;
+signal SelRectMux:std_logic;
 signal SelOutMux:lv(1 downto 0);
-signal draw_en:std_logic;
+
+signal rect_resetx: std_logic;
+signal rect_draw:std_logic;
+signal rect_done:std_logic;
 
 --FSM state
 --state need to be expanded to include clear screen command
-type state_t is (IDLE,DECODE,MOVE,DRAWDOT,DRAWLINE_startpt,DRAWLINE_endpt,DRAWLINE_wait,CLEAR);
+type state_t is (IDLE,DECODE,MOVE,DRAWDOT,DRAWLINE_startpt,DRAWLINE_endpt,DRAWLINE_wait,CLEAR_startpt,CLEAR_endpt,ClEAR_wait);
 signal state: state_t;
 signal n_state: state_t;
 
@@ -77,6 +89,7 @@ y_new <= xynewReg(5 downto 0);
 x_old<=xyoldReg(11 downto 6);
 y_old <= xyoldReg(5 downto 0);
 FSM_en<= dav and (not delaycmd);
+rect_disable<=delaycmd;
 
 --rcbcmd combinational
 HostCmd2RcbCmd: process(penReg,opReg)begin
@@ -133,6 +146,7 @@ end process HostCmd2RcbCmd;
 --register 
 Reg: process begin
 wait until clk'event and clk='1';
+if reset='0' then
 state<=n_state;
 if regEn = '1'  then
 xynewReg<=instruction(13 downto 2);
@@ -140,15 +154,23 @@ xyoldReg<=xynewReg;
 penReg<=instruction(1 downto 0);
 opReg<=instruction(15 downto 14);
 end if;
+else
+state<=IDLE;
+xynewReg<=(others=>'0');
+xyoldReg<=(others=>'0');
+penReg<=(others=>'0');
+opReg<=(others=>'0');
+end if;
 end process Reg;
-
+--draw_rect
+DR:entity draw_rect port map(clk,rect_resetx,rect_draw,rect_disable,x_in_rect,y_in_rect,x_out_rect,y_out_rect,rect_done);
 
 --draw_any_octant
 DAO: entity draw_any_octant generic map(x_new'length)
 port map(clk,resetx,draw,xbias,disable,x_in_draw,y_in_draw,draw_done,x_out_draw,y_out_draw,swap,negx,negy);
 
 --draw_any_octant Input Mux
-InMux: process(SelDrawMux,x_new,y_new,x_old,y_old)begin
+InMuxDraw: process(SelDrawMux,x_new,y_new,x_old,y_old)begin
 if SelDrawMux ='0' then
 x_in_draw<=x_old;
 y_in_draw<=y_old;
@@ -156,12 +178,24 @@ else
 x_in_draw<=x_new;
 y_in_draw<=y_new;
 end if;
-end process InMux;
+end process InMuxDraw;
+
+
+--draw_rect Input Mux
+InMuxRect: process(SelRectMux,x_new,y_new,x_old,y_old)begin
+if SelDrawMux ='0' then
+x_in_rect<=x_old;
+y_in_rect<=y_old;
+else
+x_in_rect<=x_new;
+y_in_rect<=y_new;
+end if;
+end process InMuxRect;
 
 --Output Mux
 OutMux: process(x_new,y_new,x_old,y_old,x_out_draw,y_out_draw,SelOutMux)begin
 case SelOutMux is
-when "00"|"11" =>
+when "00" =>
 x_out<=x_old;
 y_out<=y_old;
 when "01"=>
@@ -170,18 +204,23 @@ y_out<=y_new;
 when "10"=>
 x_out<=x_out_draw;
 y_out<=y_out_draw;
+when "11"=>
+x_out<=x_out_rect;
+y_out<=y_out_rect;
 when others=>NULL;
 end case;
 end process OutMux;
 
 --FSM combinational
-FSMcomb:process(state,regEn,dav,delaycmd,draw_done,diff_x,diff_y)begin
+FSMcomb:process(state,regEn,dav,delaycmd,draw_done)begin
 --default FSM output
-draw_en<='0';
+
 draw<='0';
 resetx<='0';
 SelOutMux<="00";
 SelDrawMux<='0';
+SelRectMux<='0';
+rect_draw<='1';
 hdb_busy<='1';
 startcmd<='0';
 
@@ -206,7 +245,7 @@ when DECODE =>
 			n_state<=DRAWLINE_startpt;
 		end if;
 	when ClearScreen=>
-		n_state<=CLEAR;
+		n_state<=CLEAR_startpt;
 	when Unused=> NULL;
 	when Others=>NULL;
 	end case;
@@ -231,10 +270,10 @@ when DRAWDOT =>
 
 
 when DRAWLINE_startpt =>
-	draw_en<='1';
+
 	resetx<='1';
 	SelOutMux<="10";
-	startcmd<='1';
+	startcmd<='0';
 	if delaycmd='0' then
 		n_state<= DRAWLINE_endpt;
 	else
@@ -242,7 +281,7 @@ when DRAWLINE_startpt =>
 	end if;	
 
 when DRAWLINE_endpt =>
-	draw_en<='1';
+
 	draw<='1';
 	SelOutMux<="10";
 	SelDrawMux<='1';
@@ -254,7 +293,7 @@ when DRAWLINE_endpt =>
 	end if;	
 
 when DRAWLINE_wait =>
-	draw_en<='1';
+
 	SelOutMux<="10";
 	startcmd<='1';
 	n_state<=IDLE;
@@ -262,24 +301,45 @@ when DRAWLINE_wait =>
 		n_state<= DRAWLINE_wait;
 	end if;
 
-when CLEAR=> 
-startcmd<='1';
-SelOutMux<="00";
-if delaycmd='0' then
+when CLEAR_startpt =>
+	rect_resetx<='1';
+	SelOutMux<="11";
+	startcmd<='0';
+	if delaycmd='0' then
+		n_state<= CLEAR_endpt;
+	else
+		n_state<=CLEAR_startpt;
+	end if;	
 
-else
-n_state<=CLEAR;
-end if;
+when CLEAR_endpt =>
+	rect_draw<='1';
+	SelOutMux<="11";
+	SelDrawMux<='1';
+	startcmd<='1';
+	if delaycmd='0' then
+		n_state<= CLEAR_wait;
+	else
+		n_state<=CLEAR_endpt;
+	end if;	
+
+when CLEAR_wait =>
+
+	SelOutMux<="11";
+	startcmd<='1';
+	n_state<=IDLE;
+	if (delaycmd ='1') or (draw_done ='0') then 
+		n_state<= CLEAR_wait;
+	end if;
 
 end case; 
 end process FSMcomb;
 
 --Octant_CMB
-octantcomb:process(delaycmd,x_new,y_new,x_old,y_old,draw_en)begin
+octantcomb:process(delaycmd,x_new,y_new,x_old,y_old)begin
 diff_x<=lv(signed(resize(unsigned(x_new),diff_x'length))-signed(resize(unsigned(x_old),diff_x'length)));
 diff_y<=lv(signed(resize(unsigned(y_new),diff_y'length))-signed(resize(unsigned(y_old),diff_y'length)));
 
-if delaycmd ='1' or draw_en='0' then
+if delaycmd ='1'  then
 disable <= '1';
 swap<='0';
 negx<='0';
