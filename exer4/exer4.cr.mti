@@ -1,4 +1,11 @@
-{D:/Program Files/altera/13.1/VHDL/exer4/pix_word_cache.vhd} {1 {vcom -work work -93 -explicit -check_synthesis -cover t3 {D:\Program Files\altera\13.1\VHDL\exer4\pix_word_cache.vhd}
+{D:/Program Files/altera/13.1/VHDL/exer4/pix_cache_pak.vhd} {1 {vcom -work work -93 -explicit -check_synthesis {D:/Program Files/altera/13.1/VHDL/exer4/pix_cache_pak.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling package pix_cache_pak
+
+} {} {}} {D:/Program Files/altera/13.1/VHDL/exer4/pix_word_cache.vhd} {1 {vcom -work work -93 -explicit -check_synthesis -cover t3 {D:\Program Files\altera\13.1\VHDL\exer4\pix_word_cache.vhd}
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -7,13 +14,6 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package pix_cache_pak
 -- Compiling entity pix_word_cache
 -- Compiling architecture func of pix_word_cache
-
-} {} {}} {D:/Program Files/altera/13.1/VHDL/exer4/pix_cache_pak.vhd} {1 {vcom -work work -93 -explicit -check_synthesis {D:/Program Files/altera/13.1/VHDL/exer4/pix_cache_pak.vhd}
-Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling package pix_cache_pak
 
 } {} {}} {D:/Program Files/altera/13.1/VHDL/exer4/pix_word_cache_tb.vhd} {1 {vcom -work work -93 -explicit -check_synthesis {D:/Program Files/altera/13.1/VHDL/exer4/pix_word_cache_tb.vhd}
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
@@ -28,15 +28,6 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling architecture behav of pix_word_cache_tb
 -- Loading entity pix_word_cache
 
-} {} {}} {D:/Program Files/altera/13.1/VHDL/exer4/ex4_data_pak.vhd} {1 {vcom -work work -93 -explicit -check_synthesis {D:/Program Files/altera/13.1/VHDL/exer4/ex4_data_pak.vhd}
-Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package pix_cache_pak
--- Loading package pix_tb_pak
--- Compiling package ex4_data_pak
-
 } {} {}} {D:/Program Files/altera/13.1/VHDL/exer4/pix_tb_pak.vhd} {1 {vcom -work work -93 -explicit -check_synthesis {D:/Program Files/altera/13.1/VHDL/exer4/pix_tb_pak.vhd}
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
@@ -46,6 +37,15 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling package pix_tb_pak
 -- Compiling package body pix_tb_pak
 -- Loading package pix_tb_pak
+
+} {} {}} {D:/Program Files/altera/13.1/VHDL/exer4/ex4_data_pak.vhd} {1 {vcom -work work -93 -explicit -check_synthesis {D:/Program Files/altera/13.1/VHDL/exer4/ex4_data_pak.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package pix_cache_pak
+-- Loading package pix_tb_pak
+-- Compiling package ex4_data_pak
 
 } {} {}} {D:/Program Files/altera/13.1/VHDL/exer4/ex4_data_pak_rand1000.vhd} {1 {vcom -work work -93 -explicit -check_synthesis {D:/Program Files/altera/13.1/VHDL/exer4/ex4_data_pak_rand1000.vhd}
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012

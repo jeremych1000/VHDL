@@ -15,45 +15,45 @@ USE IEEE.std_logic_1164.ALL;
 -- it will need to use this type.
 
 PACKAGE pix_cache_pak IS
-  TYPE pixop_t IS ARRAY (1 DOWNTO 0) OF std_logic;
-  SUBTYPE hostop_t is std_logic_vector(1 downto 0);
-  constant MovePen : hostop_t :="00";
-  constant DrawLine : hostop_t :="01";
-  constant ClearScreen : hostop_t :="10";
-  constant Unused  : hostop_t :="11";
-  CONSTANT psame   : pixop_t := "00";
-  CONSTANT pblack  : pixop_t := "10";
-  CONSTANT pwhite  : pixop_t := "01";
-  CONSTANT pinvert : pixop_t := "11";
-  TYPE store_t IS ARRAY (0 TO 15) OF pixop_t;
-  function slv(input:pixop_t) return std_logic_vector;
-  function pixop(input:std_logic_vector(1 downto 0)) return pixop_t; 
+	TYPE pixop_t IS ARRAY (1 DOWNTO 0) OF std_logic;
+	SUBTYPE hostop_t is std_logic_vector(1 downto 0);
+	constant MovePen     : hostop_t := "00";
+	constant DrawLine    : hostop_t := "01";
+	constant ClearScreen : hostop_t := "10";
+	constant Unused      : hostop_t := "11";
+	CONSTANT psame       : pixop_t  := "00";
+	CONSTANT pblack      : pixop_t  := "10";
+	CONSTANT pwhite      : pixop_t  := "01";
+	CONSTANT pinvert     : pixop_t  := "11";
+	TYPE store_t IS ARRAY (0 TO 15) OF pixop_t;
+	function slv(input : pixop_t) return std_logic_vector;
+	function pixop(input : std_logic_vector(1 downto 0)) return pixop_t;
 END PACKAGE pix_cache_pak;
 
 package body pix_cache_pak is
-function slv(input:pixop_t) return std_logic_vector is
-variable result: std_logic_vector(1 downto 0);
-begin
-case input is
-when psame=>	result 	 := "00";
-when pblack=> 	result   := "10";
-when pwhite=>  	result   := "01";
-when pinvert=> 	result   := "11";
-when others =>NULL;
-end case;       
-return result;
-end slv;
- 
-function pixop(input:std_logic_vector(1 downto 0)) return pixop_t is
-variable result: pixop_t;
-begin
-case input is
-when "00"	=>	result 	 := psame  ;
-when "10"	=> 	result   := pblack ;
-when "01"	=>  result   := pwhite ;
-when "11"	=> 	result   := pinvert;
-when others =>NULL;
-end case;
-return result;
-end pixop;
+	function slv(input : pixop_t) return std_logic_vector is
+		variable result : std_logic_vector(1 downto 0);
+	begin
+		case input is
+			when psame   => result := "00";
+			when pblack  => result := "10";
+			when pwhite  => result := "01";
+			when pinvert => result := "11";
+			when others  => NULL;
+		end case;
+		return result;
+	end slv;
+
+	function pixop(input : std_logic_vector(1 downto 0)) return pixop_t is
+		variable result : pixop_t;
+	begin
+		case input is
+			when "00"   => result := psame;
+			when "10"   => result := pblack;
+			when "01"   => result := pwhite;
+			when "11"   => result := pinvert;
+			when others => NULL;
+		end case;
+		return result;
+	end pixop;
 end package body pix_cache_pak;

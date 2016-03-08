@@ -10,7 +10,7 @@ ENTITY rcb IS
 		reset        : IN  std_logic;
 
 		-- db connections
-		dbb_bus      : IN db_2_rcb;
+		dbb_bus      : IN  db_2_rcb;
 		dbb_delaycmd : OUT STD_LOGIC;
 
 		-- vram connections
@@ -26,8 +26,7 @@ END rcb;
 
 ARCHITECTURE rtl1 OF rcb IS
 BEGIN
-  
-  rcb_finish <= '1';
-  dbb_delaycmd <= '0';
-  
+	rcb_finish   <= '1';
+	dbb_delaycmd <= '0';
+
 END rtl1;      

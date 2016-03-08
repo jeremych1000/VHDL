@@ -29,46 +29,42 @@ ENTITY vdp IS
 END vdp;
 
 ARCHITECTURE rtl OF vdp IS
-  SIGNAL dbb_bus      : db_2_rcb;
-  SIGNAL dbb_delaycmd : STD_LOGIC;
-  SIGNAL db_finish    : STD_LOGIC;
-  SIGNAL rcb_finish   : STD_LOGIC;
+	SIGNAL dbb_bus      : db_2_rcb;
+	SIGNAL dbb_delaycmd : STD_LOGIC;
+	SIGNAL db_finish    : STD_LOGIC;
+	SIGNAL rcb_finish   : STD_LOGIC;
 BEGIN
-  
-  fin : PROCESS (db_finish, rcb_finish)
-  BEGIN
-    
-    finish <= db_finish AND rcb_finish;
-    
-  END PROCESS fin;
+	fin : PROCESS(db_finish, rcb_finish)
+	BEGIN
+		finish <= db_finish AND rcb_finish;
 
-entity_db : ENTITY db
+	END PROCESS fin;
+
+	entity_db : ENTITY db
+		PORT MAP(
+			clk          => clk,
+			reset        => reset,
+			instruction  => hdb,
+			dav          => dav,
+			hdb_busy_out => hdb_busy,
+			hdb_bus      => dbb_bus,
+			delaycmd     => dbb_delaycmd,
+			db_finish    => db_finish
+		);
+
+	entity_rcb : ENTITY rcb
 		GENERIC MAP(6)
 		PORT MAP(
-			clk      => clk,
-			reset    => reset,
-			hdb      => hdb,
-			dav      => dav,
-			hdb_busy => hdb_busy,
-			dbb_bus  => dbb_bus,
+			clk          => clk,
+			reset        => reset,
+			dbb_bus      => dbb_bus,
 			dbb_delaycmd => dbb_delaycmd,
-			db_finish => db_finish
-			);
-			
-entity_rcb : ENTITY rcb
-    GENERIC MAP(6)
-    PORT MAP(
-      clk      => clk,
-      reset    => reset,
-      dbb_bus  => dbb_bus,
-      dbb_delaycmd => dbb_delaycmd,
-		  vdout    => vdout,
-		  vdin     => vdin,
-		  vwrite   => vwrite,
-		  vaddr    => vaddr,
-		  rcb_finish => rcb_finish
-		  );
-      
+			vdout        => vdout,
+			vdin         => vdin,
+			vwrite       => vwrite,
+			vaddr        => vaddr,
+			rcb_finish   => rcb_finish
+		);
 
 END rtl;      
 
