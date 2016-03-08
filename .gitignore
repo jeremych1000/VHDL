@@ -68,8 +68,10 @@ Temporary Items
 *.log
 *.xmi
 *.ini
+**.mti
 
-.metadata
+*.metadata
+*.plugins
 bin/
 tmp/
 *.tmp
