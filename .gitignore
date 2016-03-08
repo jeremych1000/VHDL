@@ -17,9 +17,15 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+#archive
 *.7z
 *.zip
 *.rar
+
+#modelsim
+*.dbs
+*.prw
+*.psm
 
 # =========================
 # Operating System Files
