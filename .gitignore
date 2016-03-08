@@ -70,7 +70,7 @@ Temporary Items
 *.ini
 **.mti
 
-*.metadata
+*.metadata/*
 *.plugins
 bin/
 tmp/
