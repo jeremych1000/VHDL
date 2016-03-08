@@ -19,13 +19,13 @@ Z4 o-work work -2002 -explicit -O0
 Z5 tExplicit 1
 !s100 BJ0o;G0Mn>:3>nID^KMh<2
 !i10b 1
-!s108 1457439082.763000
+!s108 1457472870.637000
 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Program Files/altera/13.1/VHDL/project/config_pack.vhd|
 !s107 D:/Program Files/altera/13.1/VHDL/project/config_pack.vhd|
 Edb
-Z6 w1457439078
+Z6 w1457472806
 Z7 DPx4 work 11 config_pack 0 22 f;e86DW;jZA20NF`aD7oG3
-Z8 DPx4 work 12 project_pack 0 22 ?8m=FVFM=J90KTNK1>XA00
+Z8 DPx4 work 12 project_pack 0 22 mUln]1_DH71c@;z@>3>3P1
 Z9 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
 R1
 Z10 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
@@ -37,7 +37,7 @@ L10
 VSCQmRM9jCQPQS<CVcUIKN2
 R3
 32
-Z13 !s108 1457439084.748000
+Z13 !s108 1457472872.005000
 Z14 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Program Files/altera/13.1/VHDL/project/hdb.vhd|
 Z15 !s107 D:/Program Files/altera/13.1/VHDL/project/hdb.vhd|
 R4
@@ -54,7 +54,7 @@ R10
 Z17 DEx4 work 2 db 0 22 SCQmRM9jCQPQS<CVcUIKN2
 l72
 L23
-V03<[`aK[ML6D8GhM;m=3I2
+Vh0nF6CV<G[WJ6cM`_nB0C3
 R3
 32
 R13
@@ -62,7 +62,7 @@ R14
 R15
 R4
 R5
-!s100 KHOVWKGWe;Ai4VKdOSZ]X1
+!s100 Iz2beiATn7^84=;b`chi[0
 !i10b 1
 Edraw_any_octant
 Z18 w1457437675
@@ -77,7 +77,7 @@ L80
 VfFW7iJY]j_>]@f:Oc[2:m0
 R3
 32
-Z21 !s108 1457439082.919000
+Z21 !s108 1457472870.780000
 Z22 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Program Files/altera/13.1/VHDL/project/draw_any_octant.vhd|
 Z23 !s107 D:/Program Files/altera/13.1/VHDL/project/draw_any_octant.vhd|
 R4
@@ -114,7 +114,7 @@ L10
 V6a1U8^`f=CoCAKI7U=e`L3
 R3
 32
-Z27 !s108 1457439083.807000
+Z27 !s108 1457472871.330000
 Z28 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Program Files/altera/13.1/VHDL/project/draw_octant.vhd|
 Z29 !s107 D:/Program Files/altera/13.1/VHDL/project/draw_octant.vhd|
 R4
@@ -151,7 +151,7 @@ L5
 VCfmc:iToSQ41bHcMFflF<3
 R3
 32
-Z33 !s108 1457439084.122000
+Z33 !s108 1457472871.592000
 Z34 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Program Files/altera/13.1/VHDL/project/draw_rect.vhd|
 Z35 !s107 D:/Program Files/altera/13.1/VHDL/project/draw_rect.vhd|
 R4
@@ -225,7 +225,7 @@ VDf7mjVeB=1><eno4`PP=V1
 R3
 32
 b1
-Z39 !s108 1457439084.994000
+Z39 !s108 1457472872.309000
 Z40 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Program Files/altera/13.1/VHDL/project/pix_cache_pak.vhd|
 Z41 !s107 D:/Program Files/altera/13.1/VHDL/project/pix_cache_pak.vhd|
 R4
@@ -233,7 +233,7 @@ R5
 !s100 E>UAfQg>1]QJjAWU;cDP40
 !i10b 1
 Bbody
-DPx4 work 13 pix_cache_pak 0 22 Df7mjVeB=1><eno4`PP=V1
+Z42 DPx4 work 13 pix_cache_pak 0 22 Df7mjVeB=1><eno4`PP=V1
 R1
 R10
 l0
@@ -249,66 +249,143 @@ R5
 nbody
 !s100 GJK=12BzV8b4C`WNPad3C0
 !i10b 1
+Epix_word_cache
+Z43 w1456930074
+R42
+R9
+R1
+R10
+R2
+Z44 8D:/Program Files/altera/13.1/VHDL/project/pix_word_cache.vhd
+Z45 FD:/Program Files/altera/13.1/VHDL/project/pix_word_cache.vhd
+l0
+L6
+V;6PXZnb:QLK=P4mlV?bPC1
+R3
+32
+Z46 !s108 1457472879.959000
+Z47 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Program Files/altera/13.1/VHDL/project/pix_word_cache.vhd|
+Z48 !s107 D:/Program Files/altera/13.1/VHDL/project/pix_word_cache.vhd|
+R4
+R5
+!s100 oMVTYn`KdhQ^Fca7H:4UX3
+!i10b 1
+Afunc
+R42
+R9
+R1
+R10
+Z49 DEx4 work 14 pix_word_cache 0 22 ;6PXZnb:QLK=P4mlV?bPC1
+l53
+L17
+VMB@;K`L^g]mFeRn?=WdFV3
+!s100 eH]HSN57el8UZW_eo^W?P1
+R3
+32
+R46
+R47
+R48
+R4
+R5
+!i10b 1
 Pproject_pack
 R10
 R1
 R7
-w1457437692
+w1457471030
 R2
 8D:/Program Files/altera/13.1/VHDL/project/project_pack.vhd
 FD:/Program Files/altera/13.1/VHDL/project/project_pack.vhd
 l0
 L5
-V?8m=FVFM=J90KTNK1>XA00
+VmUln]1_DH71c@;z@>3>3P1
 R3
 32
 R4
 R5
-!s100 ]=O;]:L`:iQVmfb^F6[h81
+!s100 >>zn3gHSPSTVfD0iK?Yo@1
 !i10b 1
-!s108 1457439085.323000
+!s108 1457472872.588000
 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Program Files/altera/13.1/VHDL/project/project_pack.vhd|
 !s107 D:/Program Files/altera/13.1/VHDL/project/project_pack.vhd|
+Eram_fsm
+Z50 w1455725970
+R1
+R10
+R2
+Z51 8D:/Program Files/altera/13.1/VHDL/project/ram_fsm.vhd
+Z52 FD:/Program Files/altera/13.1/VHDL/project/ram_fsm.vhd
+l0
+L5
+VCb0M`Jg45IQYUHe9CeA3H0
+!s100 iQ^Ih`dzWS28A]9_ZED0A3
+R3
+32
+!i10b 1
+Z53 !s108 1457472880.223000
+Z54 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Program Files/altera/13.1/VHDL/project/ram_fsm.vhd|
+Z55 !s107 D:/Program Files/altera/13.1/VHDL/project/ram_fsm.vhd|
+R4
+R5
+Asynth
+R1
+R10
+Z56 DEx4 work 7 ram_fsm 0 22 Cb0M`Jg45IQYUHe9CeA3H0
+l17
+L14
+Z57 VGGoEX;b1dXA5InZ9LC^DS1
+Z58 !s100 @>G:je0fIenPBb<44J3Jg2
+R3
+32
+!i10b 1
+R53
+R54
+R55
+R4
+R5
 Ercb
-Z42 w1457437725
+Z59 w1457472662
+R42
 R7
 R8
 R9
 R1
 R10
 R2
-Z43 8D:/Program Files/altera/13.1/VHDL/project/rcb.vhd
-Z44 FD:/Program Files/altera/13.1/VHDL/project/rcb.vhd
+Z60 8D:/Program Files/altera/13.1/VHDL/project/rcb.vhd
+Z61 FD:/Program Files/altera/13.1/VHDL/project/rcb.vhd
 l0
-L6
-VZe0nEJBIE]`R34017HROz3
+L7
+VO3WC;VMFLHHj<lM6nBkfM0
 R3
 32
-Z45 !s108 1457439085.527000
-Z46 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Program Files/altera/13.1/VHDL/project/rcb.vhd|
-Z47 !s107 D:/Program Files/altera/13.1/VHDL/project/rcb.vhd|
+Z62 !s108 1457472872.740000
+Z63 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Program Files/altera/13.1/VHDL/project/rcb.vhd|
+Z64 !s107 D:/Program Files/altera/13.1/VHDL/project/rcb.vhd|
 R4
 R5
-!s100 17V2V6k2GB0Za:XXn7cS71
+!s100 en<Ic7=B;R_Q==iF<_B5b2
 !i10b 1
 Artl1
+R49
+R42
 R7
 R8
 R9
 R1
 R10
-Z48 DEx4 work 3 rcb 0 22 Ze0nEJBIE]`R34017HROz3
-l28
-L27
-V7oL@l]o5>]UJXjdP31ecR1
+Z65 DEx4 work 3 rcb 0 22 O3WC;VMFLHHj<lM6nBkfM0
+l65
+L28
+VKTUT^DN<@ibih4f?9aFE`2
 R3
 32
-R45
-R46
-R47
+R62
+R63
+R64
 R4
 R5
-!s100 NFEoa5XbDVDdeXk@WZe<32
+!s100 m==ID_7U;jX^aGbCoL4AO3
 !i10b 1
 Eswap
 R18
@@ -351,25 +428,25 @@ Putility_pack
 R9
 R1
 R10
-Z49 w1457437733
+Z66 w1457437733
 R2
-Z50 8D:/Program Files/altera/13.1/VHDL/project/utility_pack.vhd
-Z51 FD:/Program Files/altera/13.1/VHDL/project/utility_pack.vhd
+Z67 8D:/Program Files/altera/13.1/VHDL/project/utility_pack.vhd
+Z68 FD:/Program Files/altera/13.1/VHDL/project/utility_pack.vhd
 l0
 L8
 VaNLBk>3;9a=K7VZ2G[H:[0
 R3
 32
 b1
-Z52 !s108 1457439085.809000
-Z53 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Program Files/altera/13.1/VHDL/project/utility_pack.vhd|
-Z54 !s107 D:/Program Files/altera/13.1/VHDL/project/utility_pack.vhd|
+Z69 !s108 1457472873.021000
+Z70 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Program Files/altera/13.1/VHDL/project/utility_pack.vhd|
+Z71 !s107 D:/Program Files/altera/13.1/VHDL/project/utility_pack.vhd|
 R4
 R5
 !s100 Q77<9AY7JahEgVW7NiQCl1
 !i10b 1
 Bbody
-Z55 DPx4 work 12 utility_pack 0 22 aNLBk>3;9a=K7VZ2G[H:[0
+Z72 DPx4 work 12 utility_pack 0 22 aNLBk>3;9a=K7VZ2G[H:[0
 R9
 R1
 R10
@@ -378,85 +455,86 @@ L73
 V>HLQA_ab8CZYX]XS;1W?n2
 R3
 32
-R52
-R53
-R54
+R69
+R70
+R71
 R4
 R5
 nbody
 !s100 2YF_<^=zihJaVZQZRIfSz0
 !i10b 1
 Evdp
-Z56 w1457437764
+Z73 w1457437764
 R7
 R8
-Z57 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z74 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
 R1
 R10
 R2
-Z58 8D:/Program Files/altera/13.1/VHDL/project/vdp.vhd
-Z59 FD:/Program Files/altera/13.1/VHDL/project/vdp.vhd
+Z75 8D:/Program Files/altera/13.1/VHDL/project/vdp.vhd
+Z76 FD:/Program Files/altera/13.1/VHDL/project/vdp.vhd
 l0
 L11
 Vj?Em98UYjd5I7km6^<H4J0
 R3
 32
-Z60 !s108 1457439086.026000
-Z61 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Program Files/altera/13.1/VHDL/project/vdp.vhd|
-Z62 !s107 D:/Program Files/altera/13.1/VHDL/project/vdp.vhd|
+Z77 !s108 1457472873.386000
+Z78 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Program Files/altera/13.1/VHDL/project/vdp.vhd|
+Z79 !s107 D:/Program Files/altera/13.1/VHDL/project/vdp.vhd|
 R4
 R5
 !s100 P<QFEYcVA];DR=0N`cj>D0
 !i10b 1
 Artl
-R48
+R42
+R65
 R9
 R17
 R7
 R8
-R57
+R74
 R1
 R10
-Z63 DEx4 work 3 vdp 0 22 j?Em98UYjd5I7km6^<H4J0
+Z80 DEx4 work 3 vdp 0 22 j?Em98UYjd5I7km6^<H4J0
 l36
 L31
 VXXMi^bWBSP`]:0Uf>69^Z0
 R3
 32
-R60
-R61
-R62
+R77
+R78
+R79
 R4
 R5
 !s100 X>ATb>5^NiQaUoIB`JDm]3
 !i10b 1
 Pvdp_pack
 R7
-R55
+R72
 R9
 R1
 R10
-Z64 w1457437758
+Z81 w1457437758
 R2
-Z65 8D:/Program Files/altera/13.1/VHDL/project/vdp_pack.vhd
-Z66 FD:/Program Files/altera/13.1/VHDL/project/vdp_pack.vhd
+Z82 8D:/Program Files/altera/13.1/VHDL/project/vdp_pack.vhd
+Z83 FD:/Program Files/altera/13.1/VHDL/project/vdp_pack.vhd
 l0
 L11
 VRYH<;G5WK4?<1m28hS[[E3
 R3
 32
 b1
-Z67 !s108 1457439086.330000
-Z68 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Program Files/altera/13.1/VHDL/project/vdp_pack.vhd|
-Z69 !s107 D:/Program Files/altera/13.1/VHDL/project/vdp_pack.vhd|
+Z84 !s108 1457472873.709000
+Z85 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Program Files/altera/13.1/VHDL/project/vdp_pack.vhd|
+Z86 !s107 D:/Program Files/altera/13.1/VHDL/project/vdp_pack.vhd|
 R4
 R5
 !s100 5]gYn@W98]7@zLEDBkObk0
 !i10b 1
 Bbody
-Z70 DPx4 work 8 vdp_pack 0 22 RYH<;G5WK4?<1m28hS[[E3
+Z87 DPx4 work 8 vdp_pack 0 22 RYH<;G5WK4?<1m28hS[[E3
 R7
-R55
+R72
 R9
 R1
 R10
@@ -465,45 +543,45 @@ L170
 VN2b8K>];Z?El2?[=HiQ@W0
 R3
 32
-R67
-R68
-R69
+R84
+R85
+R86
 R4
 R5
 nbody
 !s100 R8U;QBEL58oigF:3B>0a_0
 !i10b 1
 Evdp_testbench
-Z71 w1457437761
+Z88 w1457437761
 R7
-R55
-R70
+R72
+R87
 R9
 R1
 R10
 R2
-Z72 8D:/Program Files/altera/13.1/VHDL/project/vdp_testbench.vhd
-Z73 FD:/Program Files/altera/13.1/VHDL/project/vdp_testbench.vhd
+Z89 8D:/Program Files/altera/13.1/VHDL/project/vdp_testbench.vhd
+Z90 FD:/Program Files/altera/13.1/VHDL/project/vdp_testbench.vhd
 l0
 L9
 V_?<`n2=VU;2EOOl<ZcjhF0
 R3
 32
-Z74 !s108 1457439086.610000
-Z75 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Program Files/altera/13.1/VHDL/project/vdp_testbench.vhd|
-Z76 !s107 D:/Program Files/altera/13.1/VHDL/project/vdp_testbench.vhd|
+Z91 !s108 1457472873.982000
+Z92 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Program Files/altera/13.1/VHDL/project/vdp_testbench.vhd|
+Z93 !s107 D:/Program Files/altera/13.1/VHDL/project/vdp_testbench.vhd|
 R4
 R5
 !s100 aoMl>CQA9g]7m:BZMV;Pk2
 !i10b 1
 Abehav
 R8
-R57
-R63
-Z77 DEx4 work 4 vram 0 22 `SIg<=n<eZM?O:;YGUb><1
+R74
+R80
+Z94 DEx4 work 4 vram 0 22 `SIg<=n<eZM?O:;YGUb><1
 R7
-R55
-R70
+R72
+R87
 R9
 R1
 R10
@@ -511,55 +589,55 @@ DEx4 work 13 vdp_testbench 0 22 _?<`n2=VU;2EOOl<ZcjhF0
 l36
 L12
 V9D;Y;YQHj`hD:E5c^2Ldj0
-!s100 :WRiRZ;PDT[N7g=dbWQa00
 R3
 32
-R74
-R75
-R76
+R91
+R92
+R93
 R4
 R5
+!s100 :WRiRZ;PDT[N7g=dbWQa00
 !i10b 1
 Evram
-Z78 w1457437772
+Z95 w1457437772
 R7
-R55
-R70
+R72
+R87
 R9
 R1
 R10
 R2
-Z79 8D:/Program Files/altera/13.1/VHDL/project/vram.vhd
-Z80 FD:/Program Files/altera/13.1/VHDL/project/vram.vhd
+Z96 8D:/Program Files/altera/13.1/VHDL/project/vram.vhd
+Z97 FD:/Program Files/altera/13.1/VHDL/project/vram.vhd
 l0
 L10
 V`SIg<=n<eZM?O:;YGUb><1
-!s100 HmgZ6DU^D4nz97fR;1O;U3
 R3
 32
-!i10b 1
-Z81 !s108 1457439086.907000
-Z82 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Program Files/altera/13.1/VHDL/project/vram.vhd|
-Z83 !s107 D:/Program Files/altera/13.1/VHDL/project/vram.vhd|
+Z98 !s108 1457472874.963000
+Z99 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Program Files/altera/13.1/VHDL/project/vram.vhd|
+Z100 !s107 D:/Program Files/altera/13.1/VHDL/project/vram.vhd|
 R4
 R5
+!s100 HmgZ6DU^D4nz97fR;1O;U3
+!i10b 1
 Abehav
 R7
-R55
-R70
+R72
+R87
 R9
 R1
 R10
-R77
+R94
 l29
 L20
-Z84 VH@Tz<HPCLdB4mYM1:<[Gg2
-Z85 !s100 D0<O_l4jJ=8iY?:U3S;nN3
+VH@Tz<HPCLdB4mYM1:<[Gg2
 R3
 32
-!i10b 1
-R81
-R82
-R83
+R98
+R99
+R100
 R4
 R5
+!s100 D0<O_l4jJ=8iY?:U3S;nN3
+!i10b 1

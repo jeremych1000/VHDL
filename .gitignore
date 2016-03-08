@@ -172,3 +172,5 @@ local.properties
 *.xrf
 *.hsd
 
+*.ser
+*.index

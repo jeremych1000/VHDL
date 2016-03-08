@@ -83,7 +83,8 @@ begin
 	hdb_bus.Y        <= y_out;
 	hdb_bus.rcb_cmd  <= rcbcmd;
 	hdb_bus.startcmd <= startcmd;
-
+	diff_x <= lv(signed(resize(unsigned(x_new), diff_x'length)) - signed(resize(unsigned(x_old), diff_x'length)));
+	diff_y <= lv(signed(resize(unsigned(y_new), diff_y'length)) - signed(resize(unsigned(y_old), diff_y'length)));
 	--rcbcmd combinational
 	HostCmd2RcbCmd : process(penReg, opReg)
 	begin
@@ -308,14 +309,9 @@ begin
 		end case;
 	end process FSMcomb;
 
-
-	diff_x <= lv(signed(resize(unsigned(x_new), diff_x'length)) - signed(resize(unsigned(x_old), diff_x'length)));
-	diff_y <= lv(signed(resize(unsigned(y_new), diff_y'length)) - signed(resize(unsigned(y_old), diff_y'length)));
 	--Octant_CMB
-	octantcomb : process(delaycmd, x_new, y_new, x_old, y_old, diff_x, diff_y)
+	octantcomb : process(delaycmd, diff_x,diff_y )
 	begin
-		
-
 		if delaycmd = '1' then
 			disable <= '1';
 			swap    <= '0';
