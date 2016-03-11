@@ -170,7 +170,7 @@ BEGIN
 	rcb_finish   <= rcb_finish_1;
 
 	--RCB-FSM combinational process
-	C1 : PROCESS(rcb_state, rcb_flush_downcount, rcb_ready, dbb_bus.startcmd, reset, is_same)
+	C1 : PROCESS(rcb_state, rcb_flush_downcount, rcb_ready, dbb_bus.startcmd, reset, is_same, rmw_vwrite)
 	BEGIN
 		--defaults
 		pw           <= '0';
@@ -180,7 +180,7 @@ BEGIN
 		rmw_start    <= '0';
 		rmw_delay    <= '0';
 		rcb_ready    <= '1';
-		--vwrite       <= '0';
+		vwrite       <= '0';
 		rcb_finish_1 <= '0';
 
 		CASE (rcb_state) IS
@@ -213,6 +213,7 @@ BEGIN
 				wen_all   <= '1';
 				nstate    <= flush_done;
 			WHEN flush_done =>
+				vwrite <= rmw_vwrite;
 				IF rmw_vwrite = '1' THEN
 					--write pixel to word cache
 					IF rcb_skip_pw = '0' THEN

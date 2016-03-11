@@ -39,9 +39,7 @@ BEGIN
 	BEGIN
 		WAIT UNTIL rising_edge(clk);
 		IF reset = '1' THEN
-			state  <= mx;
-			vwrite_1 <= '0';
-			delay_1  <= '0';
+			state <= mx;
 		ELSE
 			state <= nstate;
 		END IF;
@@ -49,6 +47,8 @@ BEGIN
 
 	FSM : PROCESS(state, start)
 	BEGIN
+		vwrite_1 <= '0';
+		delay_1  <= '0';
 		CASE state IS
 			WHEN mx =>
 				IF start = '1' THEN
@@ -58,11 +58,11 @@ BEGIN
 					nstate <= mx;
 				END IF;
 			WHEN m1 =>
-				delay_1  <= start;
-				nstate <= m2;
+				delay_1 <= start;
+				nstate  <= m2;
 			WHEN m2 =>
-				delay_1  <= start;
-				nstate <= m3;
+				delay_1 <= start;
+				nstate  <= m3;
 				FOR i IN vdin'RANGE LOOP
 					CASE store(i) IS
 						WHEN psame   => vdin(i) <= vdout(i);
@@ -83,8 +83,8 @@ BEGIN
 			WHEN OTHERS => NULL;
 		END CASE;
 	END PROCESS FSM;
-	
+
 	vwrite <= vwrite_1;
-	delay <= delay_1;
+	delay  <= delay_1;
 
 END ARCHITECTURE memory_interface;
