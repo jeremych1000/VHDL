@@ -23,13 +23,13 @@ PACKAGE project_pack IS
 	CONSTANT rcb_draw_white   : rcb_cmd_t := "001";
 	CONSTANT rcb_draw_black   : rcb_cmd_t := "010";
 	CONSTANT rcb_draw_invert  : rcb_cmd_t := "011";
-	CONSTANT rcb_clear_0      : rcb_cmd_t := "000";
+	CONSTANT rcb_move         : rcb_cmd_t := "000";
 	CONSTANT rcb_clear_white  : rcb_cmd_t := "101";
 	CONSTANT rcb_clear_black  : rcb_cmd_t := "110";
 	CONSTANT rcb_clear_invert : rcb_cmd_t := "111";
 
-	CONSTANT rcb_clear_latency          : INTEGER := 10;
-	CONSTANT rcb_clear_latency_slv_size : INTEGER := 5;
+	CONSTANT rcb_flush_latency          : INTEGER := 30;
+	CONSTANT rcb_flush_latency_slv_size : INTEGER := 8;
 
 	TYPE db_2_rcb IS RECORD             -- possible type for interface from DB to RCD. Change as required
 		X, Y     : std_logic_vector(VSIZE - 1 DOWNTO 0);
