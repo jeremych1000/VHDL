@@ -29,8 +29,8 @@ PACKAGE project_pack IS
 	CONSTANT rcb_clear_invert : rcb_cmd_t := "111";
 
 	CONSTANT rcb_clear_latency          : INTEGER := 10;
-	CONSTANT rcb_clear_latency_slv_size : INTEGER := 5; 
-	
+	CONSTANT rcb_clear_latency_slv_size : INTEGER := 5;
+
 	TYPE db_2_rcb IS RECORD             -- possible type for interface from DB to RCD. Change as required
 		X, Y     : std_logic_vector(VSIZE - 1 DOWNTO 0);
 		rcb_cmd  : std_logic_vector(2 DOWNTO 0);
