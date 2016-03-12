@@ -158,8 +158,8 @@ BEGIN
 			rcb_state <= nstate;
 		END IF;
 
-		--registered state change
-		
+	--registered state change
+
 	END PROCESS R1;
 
 	dbb_delaycmd <= NOT rcb_ready;
@@ -170,32 +170,36 @@ BEGIN
 	rcb_finish   <= rcb_finish_1;
 
 	--RCB-FSM combinational process
-	C1 : PROCESS(rcb_state, rcb_flush_downcount, rcb_ready, dbb_bus.startcmd, reset, is_same, rmw_vwrite)
+	C1 : PROCESS(rcb_state, rcb_flush_downcount, rcb_ready, dbb_bus, reset, is_same, rmw_vwrite, equal_block_out, x_in, y_in)
 	BEGIN
 		--defaults
-		pw           <= '0';
-		wen_all      <= '0';
-		pixopin      <= (OTHERS => '0');
-		pixnum       <= (OTHERS => '0');
-		rmw_start    <= '0';
-		rmw_delay    <= '0';
-		rcb_ready    <= '1';
-		vwrite       <= '0';
-		rcb_finish_1 <= '0';
+		pw              <= '0';
+		wen_all         <= '0';
+		pixopin         <= (OTHERS => '0');
+		pixnum          <= (OTHERS => '0');
+		split_word_addr <= (OTHERS => '0');
+		rmw_start       <= '0';
+		rmw_delay       <= '0';
+		rcb_ready       <= '1';
+		rcb_skip_pw     <= '0';
+		vwrite          <= '0';
+		rcb_finish_1    <= '0';
 
 		CASE (rcb_state) IS
 			WHEN idle =>
 				IF dbb_bus.startcmd = '0' THEN
 					--clear cache if wait > N cycles
 					IF usgn(rcb_flush_downcount) = 0 THEN
+						--reset count
+						rcb_flush_downcount <= slv(to_unsigned(rcb_flush_latency, rcb_flush_downcount'LENGTH));
 						--just write pixel word cache to RAM, DONT write pixel
-						rmw_start   <= '1';
-						rmw_delay   <= '0';
-						wen_all     <= '1';
+						rmw_start           <= '1';
+						rmw_delay           <= '0';
+						wen_all             <= '1';
 						--skip writing of pixel to word cache
-						rcb_skip_pw <= '1';
+						rcb_skip_pw         <= '1';
 						--go to flush_done to check for vwrite, then back to idle
-						nstate      <= flush_done;
+						nstate              <= flush_done;
 					END IF;
 				ELSE
 					--if startcommand, check same/new word

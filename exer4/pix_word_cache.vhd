@@ -18,7 +18,7 @@ ARCHITECTURE func OF pix_word_cache IS
 	SIGNAL rdin1, rdout1 : pixop_t;
 	SIGNAL rdout_par     : store_t;
 	SIGNAL wen_concac    : std_logic_vector(1 DOWNTO 0);
-
+ 
 	ALIAS usgn IS unsigned;
 
 	--function has return value, procedure does not
