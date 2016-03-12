@@ -127,10 +127,8 @@ BEGIN
 
 	SPLIT : PROCESS(x_in, y_in)
 	BEGIN
-		pixnum(3 DOWNTO 2)          <= y_in(1 DOWNTO 0);
-		pixnum(1 DOWNTO 0)          <= x_in(1 DOWNTO 0);
-		split_word_addr(7 DOWNTO 4) <= y_in(5 DOWNTO 2);
-		split_word_addr(3 DOWNTO 0) <= x_in(5 DOWNTO 2);
+		pixnum          <= y_in(1 DOWNTO 0) & x_in(1 DOWNTO 0);
+		split_word_addr <= y_in(5 DOWNTO 2) & x_in(5 DOWNTO 2);
 	END PROCESS SPLIT;
 
 	--RCB-FSM Registered process
@@ -176,8 +174,6 @@ BEGIN
 		pw              <= '0';
 		wen_all         <= '0';
 		pixopin         <= (OTHERS => '0');
-		pixnum          <= (OTHERS => '0');
-		split_word_addr <= (OTHERS => '0');
 		rmw_start       <= '0';
 		rmw_delay       <= '0';
 		rcb_ready       <= '1';
