@@ -8,6 +8,7 @@ use work.project_pack.all;
 use work.all;
 
 entity db is
+	GENERIC(vsize : INTEGER := 6);
 	port(
 		clk          : in  std_logic;
 		instruction  : in  std_logic_vector(15 downto 0);
@@ -33,6 +34,8 @@ architecture main of db is
 	signal y_out    : std_logic_vector(5 downto 0);
 	signal rcbcmd   : std_logic_vector(2 downto 0);
 	signal startcmd : std_logic;
+	signal x_clear  : lv(5 downto 0);
+	signal y_clear  : lv(5 downto 0);
 
 	--draw_any_octant signal
 	signal swap       : std_logic;
@@ -65,7 +68,7 @@ architecture main of db is
 
 	--FSM state
 	--state need to be expanded to include clear screen command
-	type state_t is (IDLE, DECODE, MOVE, DRAWDOT, DRAWLINE_startpt, DRAWLINE_endpt, DRAWLINE_wait, CLEAR_mov, CLEAR_do);
+	type state_t is (IDLE, DECODE, MOVE, DRAWDOT_init, DRAWDOT_do, DRAWLINE_startpt, DRAWLINE_endpt, DRAWLINE_wait, CLEAR_mov_init, CLEAR_mov, CLEAR_wait_init, ClEAR_wait);
 	signal state   : state_t;
 	signal n_state : state_t;
 
@@ -83,10 +86,11 @@ begin
 	hdb_bus.Y        <= y_out;
 	hdb_bus.rcb_cmd  <= rcbcmd;
 	hdb_bus.startcmd <= startcmd;
-	diff_x <= lv(signed(resize(unsigned(x_new), diff_x'length)) - signed(resize(unsigned(x_old), diff_x'length)));
-	diff_y <= lv(signed(resize(unsigned(y_new), diff_y'length)) - signed(resize(unsigned(y_old), diff_y'length)));
+	diff_x           <= lv(signed(resize(unsigned(x_new), diff_x'length)) - signed(resize(unsigned(x_old), diff_x'length)));
+	diff_y           <= lv(signed(resize(unsigned(y_new), diff_y'length)) - signed(resize(unsigned(y_old), diff_y'length)));
+	db_finish        <= (not delaycmd) and (not dav) and (not hdb_busy);
 	--rcbcmd combinational
-	HostCmd2RcbCmd : process(penReg, opReg)
+	HostCmd2RcbCmd : process(penReg, opReg, clear_cmd)
 	begin
 		case penReg is
 			when NotUsed =>
@@ -99,10 +103,14 @@ begin
 					when Drawline =>
 						rcbcmd <= "001";
 					when ClearScreen =>
-						if clear_cmd = '0' then
-							rcbcmd <= "000";
+						if unsigned(diff_x) = 0 and unsigned(diff_y) = 0 then
+							rcbcmd <= "001";
 						else
-							rcbcmd <= "101";
+							if clear_cmd = '0' then
+								rcbcmd <= "000";
+							else
+								rcbcmd <= "101";
+							end if;
 						end if;
 					when Unused =>
 						rcbcmd <= "100";
@@ -116,10 +124,14 @@ begin
 					when Drawline =>
 						rcbcmd <= "010";
 					when ClearScreen =>
-						if clear_cmd = '0' then
-							rcbcmd <= "000";
+						if unsigned(diff_x) = 0 and unsigned(diff_y) = 0 then
+							rcbcmd <= "010";
 						else
-							rcbcmd <= "110";
+							if clear_cmd = '0' then
+								rcbcmd <= "000";
+							else
+								rcbcmd <= "110";
+							end if;
 						end if;
 					when Unused =>
 						rcbcmd <= "100";
@@ -133,10 +145,14 @@ begin
 					when Drawline =>
 						rcbcmd <= "011";
 					when ClearScreen =>
-						if clear_cmd = '0' then
-							rcbcmd <= "000";
+						if unsigned(diff_x) = 0 and unsigned(diff_y) = 0 then
+							rcbcmd <= "011";
 						else
-							rcbcmd <= "111";
+							if clear_cmd = '0' then
+								rcbcmd <= "000";
+							else
+								rcbcmd <= "111";
+							end if;
 						end if;
 					when Unused =>
 						rcbcmd <= "100";
@@ -186,7 +202,7 @@ begin
 	end process InMuxDraw;
 
 	--Output Mux
-	OutMux : process(x_new, y_new, x_old, y_old, x_out_draw, y_out_draw, SelOutMux)
+	OutMux : process(x_new, y_new, x_old, y_old, x_out_draw, y_out_draw, x_clear, y_clear, SelOutMux)
 	begin
 		case SelOutMux is
 			when "00" =>
@@ -198,9 +214,18 @@ begin
 			when "10" =>
 				x_out <= x_out_draw;
 				y_out <= y_out_draw;
+			when "11" =>
+				x_out <= x_clear;
+				y_out <= y_clear;
 			when others => NULL;
 		end case;
 	end process OutMux;
+
+	--logic that ensure left bottom corner is sent then right top corner later
+	xyclear : process(clear_cmd, x_new, y_new, x_old, y_old)
+	begin
+		(x_clear, y_clear) <= my_minmax((x_old, x_new, y_old, y_new), clear_cmd);
+	end process xyclear;
 
 	--FSM combinational
 	FSMcomb : process(state, regEn, dav, delaycmd, draw_done)
@@ -213,6 +238,7 @@ begin
 		SelDrawMux <= '0';
 		hdb_busy   <= '1';
 		startcmd   <= '0';
+		clear_cmd  <= '0';
 
 		case state is
 			when IDLE =>
@@ -229,12 +255,16 @@ begin
 						n_state <= MOVE;
 					when DrawLine =>
 						if (unsigned(x_new) = unsigned(x_old)) and (unsigned(y_new) = unsigned(y_old)) then
-							n_state <= DRAWDOT;
+							n_state <= DRAWDOT_init;
 						else
 							n_state <= DRAWLINE_startpt;
 						end if;
 					when ClearScreen =>
-						n_state <= CLEAR_mov;
+						if (unsigned(x_new) = unsigned(x_old)) and (unsigned(y_new) = unsigned(y_old)) then
+							n_state <= DRAWDOT_init;
+						else
+							n_state <= CLEAR_mov_init;
+						end if;
 					when Unused => NULL;
 					when Others => NULL;
 				end case;
@@ -248,13 +278,24 @@ begin
 					n_state <= MOVE;
 				end if;
 
-			when DRAWDOT =>
+			when DRAWDOT_init =>
 				SelOutMux <= "01";
 				startcmd  <= '1';
 				if delaycmd = '0' then
-					n_state <= IDLE;
+					n_state <= DRAWDOT_do;
 				else
-					n_state <= DRAWDOT;
+					n_state <= DRAWDOT_init;
+				end if;
+
+			when DRAWDOT_do =>
+				SelOutMux <= "01";
+
+				if delaycmd = '0' then
+					n_state  <= IDLE;
+					startcmd <= '0';
+				else
+					n_state  <= DRAWDOT_do;
+					startcmd <= '1';
 				end if;
 
 			when DRAWLINE_startpt =>
@@ -280,37 +321,60 @@ begin
 
 			when DRAWLINE_wait =>
 				SelOutMux <= "10";
-				startcmd  <= '1';
-				n_state   <= IDLE;
+
+				n_state <= IDLE;
 				if (delaycmd = '1') or (draw_done = '0') then
-					n_state <= DRAWLINE_wait;
+					n_state  <= DRAWLINE_wait;
+					startcmd <= '1';
 				end if;
 
-			when CLEAR_mov =>
-				SelOutMux <= "00";
+			when CLEAR_mov_init =>
+				SelOutMux <= "11";
 				clear_cmd <= '0';
 				startcmd  <= '1';
 				if delaycmd = '0' then
-					n_state <= CLEAR_do;
-				else
 					n_state <= CLEAR_mov;
+				else
+					n_state <= CLEAR_mov_init;
 				end if;
 
-			when CLEAR_do =>
-				SelOutMux <= "01";
+			when CLEAR_mov =>
+				SelOutMux <= "11";
+				clear_cmd <= '0';
+				if delaycmd = '0' then
+					n_state  <= CLEAR_wait_init;
+					startcmd <= '0';
+				else
+					n_state  <= CLEAR_mov;
+					startcmd <= '1';
+				end if;
+
+			when CLEAR_wait_init =>
+				SelOutMux <= "11";
 				startcmd  <= '1';
 				clear_cmd <= '1';
 				if delaycmd = '0' then
-					n_state <= IDLE;
+					n_state <= ClEAR_wait;
 				else
-					n_state <= CLEAR_do;
+					n_state <= CLEAR_wait_init;
+				end if;
+
+			when CLEAR_wait =>
+				SelOutMux <= "11";
+				clear_cmd <= '1';
+				if delaycmd = '0' then
+					startcmd <= '0';
+					n_state  <= IDLE;
+				else
+					startcmd <= '1';
+					n_state  <= CLEAR_wait;
 				end if;
 
 		end case;
 	end process FSMcomb;
 
 	--Octant_CMB
-	octantcomb : process(delaycmd, diff_x,diff_y )
+	octantcomb : process(delaycmd, diff_x, diff_y)
 	begin
 		if delaycmd = '1' then
 			disable <= '1';

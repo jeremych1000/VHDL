@@ -1,6 +1,8 @@
 USE WORK.config_pack.ALL;
+USE work.pix_cache_pak.ALL;
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
+USE IEEE.numeric_std.ALL;
 
 PACKAGE project_pack IS
 	CONSTANT RAM_WORD_SIZE : INTEGER := 16; -- fixed for this project could be changed by other applications
@@ -37,4 +39,62 @@ PACKAGE project_pack IS
 		startcmd : std_logic;
 	END RECORD;
 
+	TYPE my_xy IS RECORD
+		x1, x2, y1, y2 : std_logic_vector(VSIZE - 1 DOWNTO 0);
+	END RECORD;
+	TYPE my_xy_out IS RECORD
+		xout, yout : std_logic_vector(VSIZE - 1 DOWNTO 0);
+	END RECORD;
+
+	--function that apply operation onto a pixel word with width 16
+	function applyop(data : std_logic_vector; op : store_t) return std_logic_vector;
+	FUNCTION my_minmax(i : my_xy; max : std_logic) RETURN my_xy_out;
+
 END PACKAGE project_pack;
+
+package body project_pack is
+	function applyop(data : std_logic_vector; op : store_t) return std_logic_vector is
+		variable result : std_logic_vector(data'left to data'right);
+	begin
+		for index in 0 to 15 loop
+			case op(index) is
+				when psame   => result(index) := data(index);
+				when pblack  => result(index) := '1';
+				when pwhite  => result(index) := '0';
+				when pinvert => result(index) := not data(index);
+				when others  => NULL;
+			end case;
+		end loop;
+		return result;
+	end applyop;
+
+	FUNCTION my_minmax(i : my_xy; max : std_logic) RETURN my_xy_out IS
+		VARIABLE tmp : std_logic_vector(1 DOWNTO 0) := "00";
+	BEGIN
+		IF unsigned(i.x2) < unsigned(i.x1) THEN
+			tmp(1) := '1';
+		END IF;
+		IF unsigned(i.y2) < unsigned(i.y1) THEN
+			tmp(0) := '1';
+		END IF;
+		IF max = '1' THEN
+			CASE (tmp) IS
+				WHEN "00"   => RETURN (i.x2, i.y2);
+				WHEN "01"   => RETURN (i.x2, i.y1);
+				WHEN "10"   => RETURN (i.x1, i.y2);
+				WHEN "11"   => RETURN (i.x1, i.y1);
+				WHEN OTHERS => NULL;
+			END CASE;
+		ELSE
+			CASE (tmp) IS
+				WHEN "00"   => RETURN (i.x1, i.y1);
+				WHEN "01"   => RETURN (i.x1, i.y2);
+				WHEN "10"   => RETURN (i.x2, i.y1);
+				WHEN "11"   => RETURN (i.x2, i.y2);
+				WHEN OTHERS => NULL;
+			END CASE;
+		END IF;
+		RETURN (i.x1, i.y1);
+	END FUNCTION my_minmax;
+
+end project_pack;
