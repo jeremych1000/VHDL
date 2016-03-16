@@ -2,6 +2,7 @@ cordic/
 output_files/
 metadata/
 .metadata/
+*wlf*
 
 # Windows image file caches
 Thumbs.db
