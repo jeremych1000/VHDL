@@ -1,7 +1,7 @@
-.cordic/
-.cordic
-.output_files/
-.output_files
+cordic/
+output_files/
+metadata/
+.metadata/
 
 # Windows image file caches
 Thumbs.db
