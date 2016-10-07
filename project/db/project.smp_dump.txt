@@ -1,0 +1,31 @@
+
+State Machine - |vdp|rcb:entity_rcb|rcb_state
+Name rcb_state.clear rcb_state.draw rcb_state.flush_done rcb_state.flush_init rcb_state.move rcb_state.idle 
+rcb_state.idle 0 0 0 0 0 0 
+rcb_state.move 0 0 0 0 1 1 
+rcb_state.flush_init 0 0 0 1 0 1 
+rcb_state.flush_done 0 0 1 0 0 1 
+rcb_state.draw 0 1 0 0 0 1 
+rcb_state.clear 1 0 0 0 0 1 
+
+State Machine - |vdp|rcb:entity_rcb|pix_write_cache:PWC2|state
+Name state.m3 state.m1 state.m2 state.mx 
+state.mx 0 0 0 0 
+state.m2 0 0 1 1 
+state.m1 0 1 0 1 
+state.m3 1 0 0 1 
+
+State Machine - |vdp|db:entity_db|state
+Name state.ClEAR_wait state.CLEAR_wait_init state.CLEAR_mov state.CLEAR_mov_init state.DRAWLINE_wait state.DRAWLINE_endpt state.DRAWLINE_startpt state.DRAWDOT_do state.DRAWDOT_init state.MOVE state.DECODE state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 
+state.DECODE 0 0 0 0 0 0 0 0 0 0 1 1 
+state.MOVE 0 0 0 0 0 0 0 0 0 1 0 1 
+state.DRAWDOT_init 0 0 0 0 0 0 0 0 1 0 0 1 
+state.DRAWDOT_do 0 0 0 0 0 0 0 1 0 0 0 1 
+state.DRAWLINE_startpt 0 0 0 0 0 0 1 0 0 0 0 1 
+state.DRAWLINE_endpt 0 0 0 0 0 1 0 0 0 0 0 1 
+state.DRAWLINE_wait 0 0 0 0 1 0 0 0 0 0 0 1 
+state.CLEAR_mov_init 0 0 0 1 0 0 0 0 0 0 0 1 
+state.CLEAR_mov 0 0 1 0 0 0 0 0 0 0 0 1 
+state.CLEAR_wait_init 0 1 0 0 0 0 0 0 0 0 0 1 
+state.ClEAR_wait 1 0 0 0 0 0 0 0 0 0 0 1 

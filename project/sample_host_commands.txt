@@ -1,0 +1,303 @@
+--middle MW 25 25
+--draw line 8 octant
+MW 25 25
+DB 20 45
+MW 25 25
+DB 5 30
+MW 25 25
+DB 5 20
+MW 25 25
+DB 20 5
+MW 25 25
+DB 30 5
+MW 25 25
+DB 45 20
+MW 25 25
+DB 45 30
+MW 25 25
+DB 30 45
+
+--draw straight lines
+MW 25 25
+DB 25 45
+MW 25 25
+DB 15 35
+MW 25 25
+DB 5 25
+MW 25 25
+DB 15 15
+MW 25 25
+DB 25 5
+MW 25 25
+DB 35 15
+MW 25 25
+DB 45 25
+MW 25 25
+DB 35 35
+
+--clear
+MW 0 0
+CW 63 63
+
+--clear 8 octant
+MW 25 25
+CB 30 45
+MW 25 25
+CB 45 30
+MW 25 25
+CB 45 20
+MW 25 25
+CB 20 5
+MW 25 25
+CB 30 5
+MW 25 25
+CB 5 20
+MW 25 25
+CB 5 30
+MW 25 25
+CB 20 45
+
+--clear
+MW 0 0
+CW 63 63
+
+--draw dot
+MW 25 25
+DB 25 25
+MW 26 26
+DB 26 26
+
+--clear dot
+MW 26 26
+CI 26 26
+
+--clear
+MW 0 0
+CW 63 63
+
+--draw octagon
+MW 25 25
+DB 25 25
+CI 25 25
+
+MW 25 40
+DB 30 40
+CI 30 40
+DB 35 35
+CI 35 35
+DB 35 25
+CI 35 25
+DB 30 20
+CI 30 20
+DB 20 20
+CI 20 20
+DB 15 25
+CI 15 25
+DB 15 35
+CI 15 35
+DB 20 40
+CI 20 40
+DB 25 40
+CI 25 40
+
+--clear
+MW 0 0
+CW 63 63
+
+-- multipoint lines
+MW 12 12
+DB 12 22
+DB 12 32
+DB 12 42
+DB 12 52
+DB 22 52
+DB 32 52
+DB 42 52
+DB 52 52
+DB 52 42
+DB 52 32
+DB 52 22
+DB 52 12
+DB 42 12
+DB 32 12
+DB 22 12
+DB 12 12
+
+--clear
+MW 0 0
+CW 63 63
+
+-- draw invert cross
+MW 17 5
+DI 22 10
+MW 17 5
+DI 22 0
+MW 17 5
+DI 12 10
+MW 17 5
+DI 12 0
+
+--clear
+--keyword: plagarism
+--DELETE ALL BELOW
+MW 0 0
+CW 63 63
+
+-- draw black star
+MW 12 12
+DB 32 32
+MW 12 22
+DB 32 32
+MW 12 32
+DB 32 32
+MW 12 42
+DB 32 32
+MW 12 52
+DB 32 32
+MW 22 12
+DB 32 32
+MW 22 52
+DB 32 32
+MW 32 12
+DB 32 32
+MW 32 52
+DB 32 32
+MW 42 12
+DB 32 32
+MW 42 52
+DB 32 32
+MW 52 12
+DB 32 32
+MW 52 22
+DB 32 32
+MW 52 32
+DB 32 32
+MW 52 42
+DB 32 32
+MW 52 52
+DB 32 32
+-- black fill
+MW 0 0
+CB 17 10
+-- draw white star
+MW 5 5
+DW 10 5
+MW 5 5
+DW 10 7
+MW 5 5
+DW 10 10
+MW 5 5
+DW 7 10
+MW 5 5
+DW 5 10
+MW 5 5
+DW 2 10
+MW 5 5
+DW 0 10
+MW 5 5
+DW 0 7
+MW 5 5
+DW 0 5
+MW 5 5
+DW 0 2
+MW 5 5
+DW 0 0
+MW 5 5
+DW 2 0
+MW 5 5
+DW 5 0
+MW 5 5
+DW 7 0
+MW 5 5
+DW 10 0
+MW 5 5
+DW 10 2
+-- draw invert cross
+MW 17 5
+DI 22 10
+MW 17 5
+DI 22 0
+MW 17 5
+DI 12 10
+MW 17 5
+DI 12 0
+-- multipoint lines
+MW 12 12
+DB 12 22
+DB 12 32
+DB 12 42
+DB 12 52
+DB 22 52
+DB 32 52
+DB 42 52
+DB 52 52
+DB 52 42
+DB 52 32
+DB 52 22
+DB 52 12
+DB 42 12
+DB 32 12
+DB 22 12
+DB 12 12
+-- all color fills
+MW 1 12
+CB 10 24
+MW 3 14
+CW 8 22
+MW 2 18
+CI 9 28
+-- fills in all directions
+MW 24 10
+CB 30 6
+MW 30 4
+CB 24 0
+MW 38 0
+CB 32 4
+-- single pixel lines/fills
+MW 32 6
+DB 32 6
+MW 34 6
+CB 34 6
+MW 36 6
+DI 36 6
+MW 38 6
+CI 38 6
+-- single pixel width fills
+MW 32 8
+CB 38 8
+MW 40 0
+CB 40 10
+-- long lines
+MW 53 0
+DI 54 63
+MW 0 53
+DI 63 54
+-- single cachline fill (both axis reversed)
+MW 62 2
+CI 61 1
+-- four cache line crossing 4px fill
+MW 44 4
+CI 43 3
+-- full screen fill
+MW 0 63
+CI 63 0
+-- additional db fsm transition covering
+MW 1 30
+CB 10 31
+DB 1 33
+CI 10 34
+DI 10 34
+DB 1 36
+CB 1 36
+CI 10 38
+MW 50 52
+MW 32 16
+-- inversion of non-same cache lines in rcb
+MW 44 0
+CW 46 1
+CI 44 0
+CI 46 1
+MW 48 0
+CI 50 1
+CB 48 0
+CI 50 1

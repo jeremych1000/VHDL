@@ -1,0 +1,297 @@
+--Test 2
+
+--move three colors
+MW 0 0 
+MB 1 2 
+MI 51 44
+--draw line 8 octant <black>
+MW 25 25
+DB 20 45
+MW 25 25
+DB 5 30
+MW 25 25
+DB 5 20
+MW 25 25
+DB 20 5
+MW 25 25
+DB 30 5
+MW 25 25
+DB 45 20
+MW 25 25
+DB 45 30
+MW 25 25
+DB 30 45
+
+--draw line 8 octant <white>
+MW 25 25
+DW 20 45
+MW 25 25
+DW 5 30
+MW 25 25
+DW 5 20
+MW 25 25
+DW 20 5
+MW 25 25
+DW 30 5
+MW 25 25
+DW 45 20
+MW 25 25
+DW 45 30
+MW 25 25
+DW 30 45
+
+--draw line 8 octant <invert>
+MW 25 25
+DI 20 45
+MW 25 25
+DI 5 30
+MW 25 25
+DI 5 20
+MW 25 25
+DI 20 5
+MW 25 25
+DI 30 5
+MW 25 25
+DI 45 20
+MW 25 25
+DI 45 30
+MW 25 25
+DI 30 45
+
+--draw straight lines <black>
+MW 25 25
+DB 25 45
+MW 25 25
+DB 15 35
+MW 25 25
+DB 5 25
+MW 25 25
+DB 15 15
+MW 25 25
+DB 25 5
+MW 25 25
+DB 35 15
+MW 25 25
+DB 45 25
+MW 25 25
+DB 35 35
+
+--draw straight lines <white>
+MW 25 25
+DW 25 45
+MW 25 25
+DW 15 35
+MW 25 25
+DW 5 25
+MW 25 25
+DW 15 15
+MW 25 25
+DW 25 5
+MW 25 25
+DW 35 15
+MW 25 25
+DW 45 25
+MW 25 25
+DB 35 35
+
+--draw straight lines <invert>
+MW 25 25
+DI 25 45
+MW 25 25
+DI 15 35
+MW 25 25
+DI 5 25
+MW 25 25
+DI 15 15
+MW 25 25
+DI 25 5
+MW 25 25
+DI 35 15
+MW 25 25
+DI 45 25
+MW 25 25
+DI 35 35
+
+--clear whole screen <white>
+MW 0 0
+CW 63 63
+MW 0 63
+CW 63 0
+MW 63 63
+CW 0 0
+MW 63 0
+CW 0 63
+
+--clear whole screen <black>
+MB 0 0
+CB 63 63
+MB 0 63
+CB 63 0
+MB 63 63
+CB 0 0
+MB 63 0
+CB 0 63
+
+--clear whole screen <invert>
+MI 0 0
+CI 63 63
+MI 0 63
+CI 63 0
+MI 63 63
+CI 0 0
+MI 63 0
+CI 0 63
+
+--clear 8 octant <black>
+MW 25 25
+CB 30 45
+MW 25 25
+CB 45 30
+MW 25 25
+CB 45 20
+MW 25 25
+CB 20 5
+MW 25 25
+CB 30 5
+MW 25 25
+CB 5 20
+MW 25 25
+CB 5 30
+MW 25 25
+CB 20 45
+
+
+--clear 8 octant <black>
+MW 25 25
+CW 30 45
+MW 25 25
+CW 45 30
+MW 25 25
+CW 45 20
+MW 25 25
+CW 20 5
+MW 25 25
+CW 30 5
+MW 25 25
+CW 5 20
+MW 25 25
+CW 5 30
+MW 25 25
+CW 20 45
+
+--clear 8 octant <black>
+MW 25 25
+CI 30 45
+MW 25 25
+CI 45 30
+MW 25 25
+CI 45 20
+MW 25 25
+CI 20 5
+MW 25 25
+CI 30 5
+MW 25 25
+CI 5 20
+MW 25 25
+CI 5 30
+MW 25 25
+CI 20 45
+
+--draw dot <black white invert> at three points
+MW 25 25
+DB 25 25
+MW 26 26
+DW 26 26
+MW 27 27
+DI 27 27
+
+--draw dot at same point with three colours
+MW 25 25
+DB 25 25
+MW 25 25
+DW 25 25
+MW 25 25
+DI 25 25
+
+--clear dot at same point with three colors
+MW 26 26
+CB 26 26
+MW 26 26
+CW 26 26
+MW 26 26
+CI 26 26
+
+--clear dot at different point with three colors
+MW 26 26
+CB 26 26
+MW 27 27
+CW 27 27
+MW 28 28
+CI 28 28
+
+--draw octagon with clear point at line ends
+MW 25 25
+DB 25 25
+CI 25 25
+MW 25 40
+DB 30 40
+CI 30 40
+DB 35 35
+CI 35 35
+DB 35 25
+CI 35 25
+DB 30 20
+CI 30 20
+DB 20 20
+CI 20 20
+DB 15 25
+CI 15 25
+DB 15 35
+CI 15 35
+DB 20 40
+CI 20 40
+DB 25 40
+CI 25 40
+
+-- multipoint lines
+MW 10 10
+DB 10 20
+DB 10 30
+DB 10 40
+DB 10 50
+DB 20 50
+DB 30 50
+DB 40 50
+DB 50 50
+DB 50 40
+DB 50 30
+DB 50 20
+DB 50 10
+DB 40 10
+DB 30 10
+DB 20 10
+DB 10 10
+
+-- draw invert cross
+MW 22 10
+DI 27 15
+MW 22 10
+DI 27 5
+MW 22 10
+DI 17 15
+MW 22 10
+DI 17 5
+
+-- long lines
+MW 0 0
+DB 63 62
+MW 0 0
+DW 62 63
+MW 0 0
+DI 63 63
+MW 0 30
+CB 63 30
+MW 0 31
+CW 63 31
+MW 0 32
+CI 63 32

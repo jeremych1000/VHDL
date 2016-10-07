@@ -1,0 +1,37 @@
+coverage methodology:
+all db and rcb related files are checked for coverage with the following flags:
+statement coverage (s)
+branch coverage (b)
+condition coverage (c)
+expression coverage (e)
+0/1 toggle coverage (t)
+ignore case statement default choice (-coverexcludedefault)
+
+
+----
+the list of files tested:
+db side:
+	db.vhd: rcb never blocks db in fill endpt state (after move)
+	draw_octant.vhd
+	draw_any_octant.vhd
+
+rcb side:
+	rcb.vhd: illegal instruction, overspecified finish condition
+	ram_fsm.vhd: bugged function
+	rmw.vhd
+	pix_word_cache.vhd: not covered: illegal instruction (draw same)
+	
+---
+
+
+==================================
+
+<test reports on git>
+
+
+==================================
+with the final test:
+- The tool doesnt record coverage for functions properly.
+- fsm transitions to/from idle state is not fully tested as the provided testbench host never NOPs until it's done
+- rcb never blocks db in fill endpt state (after move)
+- Invalid commands are never sent from DB to RCB

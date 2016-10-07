@@ -1,0 +1,173 @@
+vsim -gui work.vdp_testbench
+# vsim -gui work.vdp_testbench 
+# ** Note: (vsim-3812) Design is being optimized...
+# 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.utility_pack(body)
+# Loading work.config_pack
+# Loading work.vdp_pack(body)
+# Loading ieee.std_logic_arith(body)
+# Loading work.pix_cache_pak(body)
+# Loading work.project_pack(body)
+# Loading work.vdp_testbench(behav)#1
+# Loading work.dao
+# Loading work.vdp(rtl)#1
+# Loading work.pix_word_cache(func)#1
+run -all
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /vdp_testbench/DUT/entity_rcb
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /vdp_testbench/DUT/entity_rcb
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /vdp_testbench/DUT/entity_rcb/PWC
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /vdp_testbench/DUT/entity_db
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /vdp_testbench/DUT/entity_db
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /vdp_testbench/DUT/entity_db
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /vdp_testbench/DUT/entity_db
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /vdp_testbench/DUT/entity_db
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /vdp_testbench/DUT/entity_db/DAO/D_O
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 1  Instance: /vdp_testbench/DUT/entity_db/DAO/D_O
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 1  Instance: /vdp_testbench/DUT/entity_db
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 1  Instance: /vdp_testbench/DUT/entity_db
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 1  Instance: /vdp_testbench/DUT/entity_db
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 1  Instance: /vdp_testbench/DUT/entity_db
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 1  Instance: /vdp_testbench/DUT/entity_db
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 1  Instance: /vdp_testbench/RAM1
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 1  Instance: /vdp_testbench/DUT/entity_rcb
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /vdp_testbench/DUT/entity_rcb
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /vdp_testbench/DUT/entity_rcb
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 2  Instance: /vdp_testbench/RAM1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 5 ns  Iteration: 1  Instance: /vdp_testbench/DUT/entity_db/DAO/D_O
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 5 ns  Iteration: 1  Instance: /vdp_testbench/DUT/entity_db/DAO/D_O
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 5 ns  Iteration: 2  Instance: /vdp_testbench/DUT/entity_db/DAO/D_O
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5 ns  Iteration: 2  Instance: /vdp_testbench/DUT/entity_rcb/PWC
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 5 ns  Iteration: 2  Instance: /vdp_testbench/DUT/entity_rcb
+# ** Warning: write pulse < twp
+#    Time: 5 ns  Iteration: 5  Instance: /vdp_testbench/RAM1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 1  Instance: /vdp_testbench/DUT/entity_db/DAO/D_O
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 1  Instance: /vdp_testbench/DUT/entity_db/DAO/D_O
+# ** Note: Reading command:1
+#    Time: 100 ns  Iteration: 1  Instance: /vdp_testbench
+# ** Note: Reading command:2
+#    Time: 100 ns  Iteration: 1  Instance: /vdp_testbench
+# ** Note: Reading command:3
+#    Time: 100 ns  Iteration: 1  Instance: /vdp_testbench
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 100 ns  Iteration: 2  Instance: /vdp_testbench/RAM1
+# ** Note: Reading command:4
+#    Time: 106 ns  Iteration: 0  Instance: /vdp_testbench
+# ** Note: Reading command:5
+#    Time: 136 ns  Iteration: 0  Instance: /vdp_testbench
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 145 ns  Iteration: 1  Instance: /vdp_testbench/DUT/entity_db/DAO/D_O
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 145 ns  Iteration: 1  Instance: /vdp_testbench/DUT/entity_db/DAO/D_O
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 145 ns  Iteration: 3  Instance: /vdp_testbench/DUT/entity_db/DAO/D_O
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 145 ns  Iteration: 7  Instance: /vdp_testbench/DUT/entity_rcb/PWC
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 145 ns  Iteration: 7  Instance: /vdp_testbench/DUT/entity_rcb
+# ** Note: Reading command:6
+#    Time: 1826 ns  Iteration: 0  Instance: /vdp_testbench
+# ** Note: Reading command:7
+#    Time: 1856 ns  Iteration: 0  Instance: /vdp_testbench
+# ** Note: Reading command:8
+#    Time: 3226 ns  Iteration: 0  Instance: /vdp_testbench
+# ** Note: Reading command:9
+#    Time: 5136 ns  Iteration: 0  Instance: /vdp_testbench
+# ** Note: skipping line: 10
+#    Time: 6596 ns  Iteration: 0  Instance: /vdp_testbench
+# ** Note: Bad character (B) should be [DMC] in col 1, line 10
+#    Time: 6596 ns  Iteration: 0  Instance: /vdp_testbench
+# ** Note: Displaying VRAM data with width of 55 some pixels will not be displayed
+#    Time: 8615 ns  Iteration: 1  Instance: /vdp_testbench
+#  B                                                     
+#  B                                                     
+#  B                                                     
+#  B                                                     
+#  B   B                                                 
+#  B   B                                                 
+#  B   B                                                 
+#  B   B                                                 
+#  B   B                                                 
+#  B  BB                                                 
+#  B  B                                                  
+#  B  B                                                  
+#  B  B                                                  
+#  B  B                                                  
+#  B  B                                                  
+#  B  B                                                  
+#  B  B                                                  
+#  B  B                                                  
+#  B  B                                                  
+#  B BB                                                  
+#  B B                                                   
+#  B B                                                   
+#  B B                                                   
+#  B B                                                   
+#  B B                                                   
+#  B B                                                   
+#  B B                                                   
+#  B B                                                   
+#  B B                                                   
+#  BBB                                                   
+#  BB                                                    
+#  BB                                                    
+#  BB                                                    
+#  BB                                                    
+#  BB                                                    
+#  BB                                                    
+#  BB                                                  BB
+#  BB                                               BBBBB
+#  BB                                            BBB BB  
+#  BB                                         BBB  BB    
+#  B                                       BBB   BB      
+#  B                                    BBB    BB        
+#  B                                 BBB     BB          
+#  B                              BBB      BB            
+#  B                           BBB      BBB              
+#  B                        BBB       BB                 
+#  B                     BBB        BB                   
+#  B                  BBB         BB                     
+#  B               BBB          BB                       
+# BB            BBB           BB                         
+# BB         BBB            BB                           
+# BB      BBB             BB                             
+# BB   BBB              BB                               
+# BBBBB               BB                                 
+# BB                                                     
+# ** Note: Bad character (B) should be [DMC] in col 1, line 10
+#    Time: 8615 ns  Iteration: 1  Instance: /vdp_testbench
+# ** Note: Commands from: sample_host_commands.txt, VDP PASSED.
+#    Time: 8615 ns  Iteration: 1  Instance: /vdp_testbench
+# ** Failure: Test finished normally.
+#    Time: 8615 ns  Iteration: 1  Process: /vdp_testbench/MAIN File: H:/VHDL/ProjectV2/adpre/vdp_testbench.vhd
+# Break in Process MAIN at H:/VHDL/ProjectV2/adpre/vdp_testbench.vhd line 194

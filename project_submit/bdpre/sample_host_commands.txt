@@ -1,0 +1,10 @@
+-- screen is initially cleared to white ('0') state
+-- draw long lines
+MW 1  1
+DB 1 60
+MW 20 1
+DB 60 20
+DB 0  0
+DB 5  50
+DB 0  0
+
